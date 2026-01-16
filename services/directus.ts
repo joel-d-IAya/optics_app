@@ -1,54 +1,80 @@
 
 import { Product, Appointment } from '../types';
 
+// REEMPLAZA ESTOS VALORES con tu usuario y repo de GitHub
+const GITHUB_USER = "TU_USUARIO_GITHUB";
+const GITHUB_REPO = "TU_REPOSITORIO";
+const BASE_URL = `https://raw.githubusercontent.com/${GITHUB_USER}/${GITHUB_REPO}/main/assets`;
+
 export const directusService = {
   async getProducts(): Promise<Product[]> {
     return [
       {
         id: "v1",
-        nombre: "Clubmaster Cuenca",
-        descripcion: "Estilo icónico de los años 50 rediseñado con materiales ligeros.",
+        nombre: "Clubmaster Heritage",
+        descripcion: "El clásico reinventado con acabados en acetato premium.",
         precio: 165,
-        imagen: "https://images.unsplash.com/photo-1572635196237-14b3f281503f?auto=format&fit=crop&q=80&w=400",
-        imagenAR: "https://i.ibb.co/L5QzX0w/glasses-overlay.png", // Usando un PNG transparente de alta calidad
+        imagen: `${BASE_URL}/clubmaster.jpg`,
+        imagenAR: `${BASE_URL}/clubmaster-ar.png`,
         categoria: 'sol',
         marca: 'VIA ELITE'
       },
       {
         id: "v2",
         nombre: "Aviador Tomebamba",
-        descripcion: "Protección clásica con marcos de metal pulido a mano.",
-        precio: 180,
-        imagen: "https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&q=80&w=400",
-        imagenAR: "https://i.ibb.co/3W6qW9z/aviator-ar.png",
+        descripcion: "Montura metálica ultra ligera con protección UV400.",
+        precio: 185,
+        imagen: `${BASE_URL}/aviador.jpg`,
+        imagenAR: `${BASE_URL}/aviador-ar.png`,
         categoria: 'sol',
         marca: 'VIA HERITAGE'
       },
       {
         id: "v3",
         nombre: "Catedral Tortoise",
-        descripcion: "Acabado tipo carey para un look intelectual y sofisticado.",
+        descripcion: "Estilo intelectual con acabado carey de alta resistencia.",
         precio: 145,
-        imagen: "https://images.unsplash.com/photo-1591076482161-42ce6da69f67?auto=format&fit=crop&q=80&w=400",
-        imagenAR: "https://i.ibb.co/yYVpS6G/tortoise-ar.png",
+        imagen: `${BASE_URL}/carey.jpg`,
+        imagenAR: `${BASE_URL}/carey-ar.png`,
         categoria: 'oftalmico',
         marca: 'VIA TECH'
       },
       {
         id: "v4",
-        nombre: "Black Minimalist",
-        descripcion: "Marcos rectangulares negros para una máxima versatilidad.",
-        precio: 130,
-        imagen: "https://images.unsplash.com/photo-1556103255-4443dbae8e5a?auto=format&fit=crop&q=80&w=400",
-        imagenAR: "https://i.ibb.co/VqhZz7D/black-rect-ar.png",
+        nombre: "Round Retro Black",
+        descripcion: "Minimalismo puro en formato circular para rostros angulares.",
+        precio: 135,
+        imagen: `${BASE_URL}/round-black.jpg`,
+        imagenAR: `${BASE_URL}/round-black-ar.png`,
         categoria: 'oftalmico',
         marca: 'VIA ELITE'
+      },
+      {
+        id: "v5",
+        nombre: "Butterfly Fashion",
+        descripcion: "Diseño sobredimensionado para un look audaz y elegante.",
+        precio: 195,
+        imagen: `${BASE_URL}/butterfly.jpg`,
+        imagenAR: `${BASE_URL}/butterfly-ar.png`,
+        categoria: 'sol',
+        marca: 'VIA LUXE'
+      },
+      {
+        id: "v6",
+        nombre: "Panto Blue Gradient",
+        descripcion: "Degradado de azul a transparente con varillas de titanio.",
+        precio: 155,
+        imagen: `${BASE_URL}/panto-blue.jpg`,
+        imagenAR: `${BASE_URL}/panto-blue-ar.png`,
+        categoria: 'oftalmico',
+        marca: 'VIA TECH'
       }
     ];
   },
 
   async createAppointment(appointment: Appointment): Promise<boolean> {
-    console.log('Cita enviada:', appointment);
-    return true;
+    // Simulación de envío a base de datos
+    console.log('Cita registrada en sistema:', appointment);
+    return new Promise((resolve) => setTimeout(() => resolve(true), 1000));
   }
 };
