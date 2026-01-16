@@ -1,0 +1,7 @@
+{
+  "name": "Via Optic's - Cuenca",
+  "description": "Exclusiva óptica en Cuenca, Ecuador, ofreciendo servicios de alta calidad, probador virtual con IA y reserva de citas en línea.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
